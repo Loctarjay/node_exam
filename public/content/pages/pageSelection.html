@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../css/global-style.css">
+    <title>Exam Project</title>
+</head>
+<body>
+    <h1>Welcome to Page Selection</h1>
+    <label>Depending on your restriction, some pages wont be available</label>
+    <br/>
+
+    <form name="myForm" onsubmit="return onSubmitForm();">
+        <input type="submit" value="About" onclick="document.pressed=this.value">
+        <input type="submit" value="Texture Explanation" onclick="document.pressed=this.value">
+        <input type="submit" value="Game List" onclick="document.pressed=this.value">
+    </form>
+
+    <a href="/">Frontpage</a>
+
+    <script>
+        function onSubmitForm() {
+            if (document.pressed == 'About') {
+                console.log("about");
+                document.myForm.action = "/about";
+            } else if (document.pressed == 'Texture Explanation') {
+                document.myForm.action = "/texture";
+            } else {
+                document.myForm.action = "/game-list";
+            }
+        }
+    </script>
+</body>
+</html>
